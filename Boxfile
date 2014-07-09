@@ -1,0 +1,7 @@
+global:
+  env:
+    - LARAVEL_ENV: production
+web1:
+  name: dwa15RepoP3
+  document_root: /public
+  php_version: 5.5.7
