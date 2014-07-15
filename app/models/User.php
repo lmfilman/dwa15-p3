@@ -1,26 +1,20 @@
 <?php
 
-use Illuminate\Auth\UserTrait;
-use Illuminate\Auth\UserInterface;
-use Illuminate\Auth\Reminders\RemindableTrait;
-use Illuminate\Auth\Reminders\RemindableInterface;
+//http://www.infochimps.com/datasets/word-list-21000-common-given-names-us-great-britain/downloads/265921
+class User  {
 
-class User extends Eloquent implements UserInterface, RemindableInterface {
+	var $first_name;
+	var $last_name;
 
-	use UserTrait, RemindableTrait;
+	function set_name($first_name, $last_name){
+		$this->first_name = $first_name;
+		$this->last_name = $last_name;
+	}
 
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
-	protected $table = 'users';
-
-	/**
-	 * The attributes excluded from the model's JSON form.
-	 *
-	 * @var array
-	 */
-	protected $hidden = array('password', 'remember_token');
+	function get_name(){
+		return $this->first_name . " " . $this->last_name;
+	}
 
 }
+
+

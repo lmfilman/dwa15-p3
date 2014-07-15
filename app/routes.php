@@ -11,7 +11,34 @@
 |
 */
 
+include(app_path().'/models/User.php');
+
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('homepage');
+});
+
+Route::get('/lorem-ipsum', function()
+{
+	return View::make('lorem_ipsum');
+});
+
+Route::post('/lorem-ipsum', function()
+{
+	$input = Input::all();
+	print_r($input);
+});
+
+
+Route::get('/random-user', function()
+{
+	$user = new User();
+	$user->set_name("Laura", "Filman");
+	return View::make('random_user')->with('user', $user);
+});
+
+Route::post('/random-user', function()
+{
+	$input = Input::all();
+	print_r($input);
 });
