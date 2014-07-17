@@ -15,12 +15,22 @@
 			Include profile? <input type="checkbox" name="include_profile">
 			<input type="submit">
 		</form>
+
 		<?php 
+			if ($num_users_error){
+				echo 'ERROR<br>';
+			}
 			foreach ($users as $user){
 				echo $user->get_name() . '<br>';
-				echo $user->get_birthday() . '<br>';
-				echo $user->get_location() . '<br>';
-				echo $user->get_profile(). '<br>';
+				if ($include_birthday){
+					echo $user->get_birthday() . '<br>';
+				}
+				if ($include_location){
+					echo $user->get_location() . '<br>';
+				}
+				if ($include_profile){
+					echo 'PROFILE_HERE<br>';//$user->get_profile(). '<br>';
+				}
 				echo '<br>';
 			}
 		?>
