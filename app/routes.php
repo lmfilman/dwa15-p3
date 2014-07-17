@@ -32,15 +32,23 @@ Route::post('/lorem-ipsum', function()
 
 Route::get('/random-user', function()
 {
-	$user_generator = new UserGenerator();
-	$users = $user_generator->get_users(3);
-	return View::make('random_user')->with('users', $users);
+	return View::make('random_user')->with('users', UserGenerator::get_users(3))
+									->with('include_birthday', false)
+									->with('include_location', false)
+									->with('include_profile', false);
 });
 
 Route::post('/random-user', function()
 {
 	$num_users = Input::get('num_users');
-	$user_generator = new UserGenerator();
-	$users = $user_generator->get_users($num_users);
-	return View::make('random_user')->with('users', $users);
+
+	//TODO: Validate $num_users
+
+	$include_birthday = Input::get('include_birthday');
+	$include_location = Input::get('include_location');
+	$include_profile = Input::get('include_profile');
+	return View::make('random_user')->with('users', UserGenerator::get_users($num_users))
+									->with('include_birthday', $include_birthday)
+									->with('include_location', $include_location)
+									->with('include_profile', $include_profile);
 });
