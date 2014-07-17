@@ -7,13 +7,16 @@
 <body>
 	<div>
 		<a href='/'>Return home</a>
-		<h1>Random User</h1>
+		<h1>Random User Generator</h1>
 		<form method="POST">
-			Title: <input type="text" name="title">
+			Number of users (1 - 20): <input type="text" name="num_users">
 			<input type="submit">
 		</form>
 		<?php 
-			echo $user->get_name();
+			foreach ($users as $user){
+				echo $user->get_name();
+				echo '<br>';
+			}
 		?>
 
 	</div>

@@ -32,13 +32,15 @@ Route::post('/lorem-ipsum', function()
 
 Route::get('/random-user', function()
 {
-	$user = new User();
-	$user->set_name("Laura", "Filman");
-	return View::make('random_user')->with('user', $user);
+	$user_generator = new UserGenerator();
+	$users = $user_generator->get_users(3);
+	return View::make('random_user')->with('users', $users);
 });
 
 Route::post('/random-user', function()
 {
-	$input = Input::all();
-	print_r($input);
+	$num_users = Input::get('num_users');
+	$user_generator = new UserGenerator();
+	$users = $user_generator->get_users($num_users);
+	return View::make('random_user')->with('users', $users);
 });
