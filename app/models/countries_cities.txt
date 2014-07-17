@@ -1,0 +1,176 @@
+http://en.wikipedia.org/wiki/List_of_national_capitals_and_largest_cities_by_country
+Afghanistan,Kabul
+Albania,Tirana
+Algeria,Algiers
+Andorra,Andorra la Vella	
+Angola,Luanda
+Argentina,Buenos Aires	
+Armenia,Yerevan	
+Australia,Canberra
+Austria,Vienna	
+Azerbaijan,Baku	
+Bahamas,Nassau	
+Bahrain,Manama	
+Bangladesh,Dhaka	
+Barbados,Bridgetown	
+Belarus,Minsk	
+Belgium,Brussels	
+Belize,Belmopan
+Benin,Porto-Novo
+Bhutan,Thimphu	
+Bolivia,Sucre
+Bosnia,Sarajevo	
+Botswana,Gaborone	
+Brunei,Bandar Seri Begawan	
+Bulgaria,Sofia	
+Burkina Faso,Ouagadougou	
+Burma,Naypyidaw
+Burundi,Bujumbura	
+Cambodia,Phnom Penh	
+Canada,Ottawa
+Cape Verde,Praia	
+Central African Republic,Bangui	
+Chad,N'Djamena	
+Chile,Santiago
+China,Beijing
+Comoros,Moroni	
+Democratic Republic of the Congo,Kinshasa	
+Croatia,Zagreb	
+Cuba,Havana	
+Cyprus,Nicosia	
+Czech Republic,Prague	
+Denmark,Copenhagen	
+Djibouti,Djibouti	
+Dominica,Roseau	
+Dominican Republic,Santo Domingo	
+East Timor,Dili	
+Ecuador,Quito
+Egypt,Cairo	
+El Salvador,San Salvador	
+Equatorial Guinea,Malabo	
+Eritrea,Asmara	
+Estonia,Tallinn	
+Ethiopia,Addis Ababa	
+Fiji,Suva	
+Finland,Helsinki	
+France,Paris	
+Gabon,Libreville	
+Gambia,Banjul
+Georgia,Tbilisi	
+Germany,Berlin	
+Ghana,Accra
+Greece,Athens
+Grenada,St. George's
+Guatemala,Guatemala City
+Guinea,Conakry
+Guinea-Bissau,Bissau
+Guyana,Georgetown
+Haiti,Port-au-Prince	
+Honduras,Tegucigalpa	
+Hungary,Budapest	
+India,New Delhi
+Indonesia,Jakarta	
+Iran,Tehran	
+Iraq,Baghdad	
+Ireland,Dublin	
+Israel,Jerusalem
+Italy,Rome
+Jamaica,Kingston	
+Japan,Tokyo
+Jordan,Amman	
+Kazakhstan,Astana
+Kenya,Nairobi	
+Kiribati,South Tarawa	
+North Korea,Pyongyang	
+South Korea,Seoul	
+Kuwait,Kuwait City	
+Kyrgyzstan,Bishkek	
+Laos,Vientiane	
+Latvia,Riga	
+Lebanon,Beirut	
+Lesotho,Maseru	
+Liberia,Monrovia	
+Libya,Tripoli	
+Liechtenstein,Vaduz
+Lithuania,Vilnius	
+Luxembourg,Luxembourg City	
+Macedonia,Skopje	
+Madagascar,Antananarivo	
+Malawi,Lilongwe	
+Malaysia,Kuala Lumpur
+Mali,Bamako	
+Malta,Valletta
+Marshall Islands,Majuro	
+Mauritania,Nouakchott	
+Mauritius,Port Louis	
+Mexico,Mexico City	
+Monaco,Monaco	
+Mongolia,Ulan Bator	
+Montenegro,Podgorica	
+Morocco,Rabat
+Mozambique,Maputo
+Namibia,Windhoek	
+Nepal,Kathmandu	
+Netherlands,Amsterdam
+New Zealand,Wellington
+Nicaragua,Managua	
+Niger,Niamey	
+Nigeria,Abuja
+Norway,Oslo	
+Oman,Muscat	
+Pakistan,Islamabad
+Palau,Ngerulmud
+Palestine,Gaza City
+Panama,Panama City	
+Papua New Guinea,Port Moresby	
+Peru,Lima	
+Philippines,Manila
+Poland,Warsaw	
+Portugal,Lisbon
+Qatar,Doha	
+Romania,Bucharest	
+Russia,Moscow	
+Rwanda,Kigali	
+Saint Lucia,Castries		
+Samoa,Apia	
+San Marino,San Marino
+Saudi Arabia,Riyadh	
+Senegal,Dakar	
+Serbia,Belgrade	
+Seychelles,Victoria	
+Sierra Leone,Freetown	
+Singapore,Singapore	
+Slovakia,Bratislava	
+Slovenia,Ljubljana	
+Solomon Islands,Honiara	
+Somalia,Mogadishu	
+South Africa,Pretoria
+Spain,Madrid	
+Sri Lanka,Colombo
+Sudan,Khartoum
+Suriname,Paramaribo	
+Swaziland,Mbabane
+Sweden,Stockholm	
+Switzerland,Bern
+Syria,Damascus
+Tajikistan,Dushanbe	
+Tanzania,Dodoma
+Thailand,Bangkok		
+Tunisia,Tunis	
+Turkey,Istanbul
+Turkmenistan,Ashgabat	
+Tuvalu,Funafuti	
+Uganda,Kampala	
+Ukraine,Kiev	
+United Arab Emirates,Abu Dhabi
+United Kingdom,London
+United States,New York City
+Uruguay,Montevideo	
+Uzbekistan,Tashkent	
+Vanuatu,Port Vila	
+Vatican City,Vatican City	
+Venezuela,Caracas	
+Vietnam,Hanoi
+Yemen,Sana'a	
+Zambia,Lusaka	
+Zimbabwe,Harare	
