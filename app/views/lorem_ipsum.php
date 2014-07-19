@@ -9,7 +9,7 @@
 		<a href='/'>Return home</a>
 		<h1>Lorem Ipsum</h1>
 		<form method="POST">
-			Number of paragraphs (1 - 20): <input type="text" name="num_paragraphs">
+			Number of paragraphs (1 - 20): <input type="text" name="num_paragraphs" value=<?php echo "'" . $num_paragraphs . "'";?>>
 			<input type="submit">
 		</form>
 
