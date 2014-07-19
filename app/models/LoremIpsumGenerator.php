@@ -1,11 +1,13 @@
 <?php
 
+//http://la.wikisource.org/wiki/De_finibus_bonorum_et_malorum/Liber_Primus
+
 class LoremIpsumGenerator  {
 
 	public static function get_text ($num_paragraphs){
 
 		//Read in Latin words
-		$lorem_ipsem_words = DataImporter::import_data(app_path().'/models/lorem_ipsum.txt');
+		$lorem_ipsem_words = DataImporter::import_data_organized_by_paragraphs(app_path().'/models/lorem_ipsum_2.txt');
 
 		$text = "";
 
@@ -26,7 +28,6 @@ class LoremIpsumGenerator  {
 					$rand_word_index = rand(0, count($lorem_ipsem_words) - 1);
 					
 					$word = $lorem_ipsem_words[$rand_word_index];
-					$word = str_replace("\n", "", trim($word));
 					
 					if ($k == 0){
 						$word = ucfirst($word);
