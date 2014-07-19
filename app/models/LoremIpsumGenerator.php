@@ -7,7 +7,7 @@ class LoremIpsumGenerator  {
 	public static function get_text ($num_paragraphs){
 
 		//Read in Latin words
-		$lorem_ipsem_words = DataImporter::import_data_organized_by_paragraphs(app_path().'/models/lorem_ipsum_2.txt');
+		$lorem_ipsem_words = self::import_data(app_path().'/models/lorem_ipsum.txt');
 
 		$text = "";
 
@@ -25,10 +25,11 @@ class LoremIpsumGenerator  {
 				$num_words_per_sentence = rand(8, 20);
 				for ($k = 0; $k < $num_words_per_sentence; $k++){
 
+					//Get random word from list of Latin words
 					$rand_word_index = rand(0, count($lorem_ipsem_words) - 1);
-					
 					$word = $lorem_ipsem_words[$rand_word_index];
 					
+					//Capitalize first word in sentence
 					if ($k == 0){
 						$word = ucfirst($word);
 					}
@@ -48,6 +49,36 @@ class LoremIpsumGenerator  {
 		}
 
 		return $text;
+	}
+
+	private static function import_data($filepath){
+
+		$handle = fopen($filepath, "r");
+		$contents = fread($handle, filesize($filepath));
+		fclose($handle);
+
+		//Replace special chars, like ?, *, (, ), [, ], etc. with " "
+		$contents = preg_replace("/[^a-z]/", " ", $contents);
+		//Replace multi-space with single-space
+		$contents = preg_replace("/\s+/", " ", $contents);
+
+		$data = explode(" ", $contents);
+
+		/* Make letters lowercase and remove words of length < 1, 
+		 * since above regex created words like 'M' and 'D'.
+		*/
+		$validated_data = array();
+		while (count($data) > 0){
+			$word = array_pop($data);
+			$word = strtolower($word);
+
+			if (strlen($word) > 1){
+				array_push($validated_data, $word);
+			}
+
+		}
+
+		return $validated_data;
 	}
 
 }
