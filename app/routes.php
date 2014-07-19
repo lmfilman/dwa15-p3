@@ -13,23 +13,57 @@
 
 include(app_path().'/models/User.php');
 
+
+/*
+|--------------------------------------------------------------------------
+| HOMEPAGE
+|--------------------------------------------------------------------------
+|
+*/
 Route::get('/', function()
 {
 	return View::make('homepage');
 });
 
+/*
+|--------------------------------------------------------------------------
+| LOREM IPSUM GENERATOR
+|--------------------------------------------------------------------------
+|
+*/
+define("NUM_PARAGRAPHS_DEFAULT", 3);
+
 Route::get('/lorem-ipsum', function()
 {
-	return View::make('lorem_ipsum');
+	return View::make('lorem_ipsum')->with('lorem_ipsum_text', LoremIpsumGenerator::get_text(NUM_PARAGRAPHS_DEFAULT))
+									->with('num_paragraphs_error', $num_paragraphs_error);
+
 });
 
 Route::post('/lorem-ipsum', function()
 {
-	$input = Input::all();
-	print_r($input);
+	$num_paragraphs = Input::get('num_paragraphs');
+	$num_paragraphs_error = false;
+
+	// Validate user input
+	if ((!is_numeric($num_paragraphs) || $num_paragraphs > 20 || $num_paragraphs < 1)){
+		// Throw error
+		$num_paragraphs_error = true;
+
+		//Set default if invalid input
+		$num_paragraphs = NUM_PARAGRAPHS_DEFAULT;
+	} 
+	return View::make('lorem_ipsum')->with('lorem_ipsum_text', LoremIpsumGenerator::get_text($num_paragraphs))
+									->with('num_paragraphs_error', $num_paragraphs_error);
+
 });
 
-
+/*
+|--------------------------------------------------------------------------
+| USER GENERATOR
+|--------------------------------------------------------------------------
+|
+*/
 define("NUM_USERS_DEFAULT", 3);
 
 Route::get('/random-user', function()

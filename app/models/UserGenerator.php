@@ -7,15 +7,15 @@ class UserGenerator  {
 	public static function get_users ($num_users){
 
 		//Read in first names
-		$first_names = self::import_data(app_path().'/models/actor-givenname');
+		$first_names = DataImporter::import_data(app_path().'/models/actor-givenname');
 		shuffle($first_names);
 
 		//Read in last names
-		$last_names = self::import_data(app_path().'/models/actor-surname');	
+		$last_names = DataImporter::import_data(app_path().'/models/actor-surname');	
 		shuffle($last_names);
 
 		//Read in cities
-		$countries_cities = self::import_data(app_path().'/models/countries_cities.txt');
+		$countries_cities = DataImporter::import_data(app_path().'/models/countries_cities.txt');
 		shuffle($countries_cities);
 
 		$users = array();
@@ -46,20 +46,6 @@ class UserGenerator  {
 
 		return $users;
 	}
-
-
-
-	private static function import_data($filepath){
-
-		$handle = fopen($filepath, "r");
-		$contents = fread($handle, filesize($filepath));
-		fclose($handle);
-
-		$names = explode("\n", $contents);
-
-		return $names;
-	}
-
 
 }
 
