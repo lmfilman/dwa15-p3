@@ -29,7 +29,7 @@
 					echo $user->get_location() . '<br>';
 				}
 				if ($include_profile){
-					echo 'PROFILE_HERE<br>';//$user->get_profile(). '<br>';
+					echo $user->get_profile(). '<br>';
 				}
 				echo '<br>';
 			}

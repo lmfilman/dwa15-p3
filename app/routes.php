@@ -36,7 +36,7 @@ define("NUM_PARAGRAPHS_DEFAULT", 3);
 Route::get('/lorem-ipsum', function()
 {
 	return View::make('lorem_ipsum')->with('lorem_ipsum_text', LoremIpsumGenerator::get_text(NUM_PARAGRAPHS_DEFAULT))
-									->with('num_paragraphs_error', $num_paragraphs_error);
+									->with('num_paragraphs_error', false);
 
 });
 
@@ -68,7 +68,8 @@ define("NUM_USERS_DEFAULT", 3);
 
 Route::get('/random-user', function()
 {
-	return View::make('random_user')->with('users', UserGenerator::get_users(NUM_USERS_DEFAULT))
+	return View::make('random_user')->with('num_users', NUM_USERS_DEFAULT)
+									->with('users', UserGenerator::get_users(NUM_USERS_DEFAULT))
 									->with('include_birthday', false)
 									->with('include_location', false)
 									->with('include_profile', false)
@@ -92,7 +93,8 @@ Route::post('/random-user', function()
 	$include_birthday = Input::get('include_birthday');
 	$include_location = Input::get('include_location');
 	$include_profile = Input::get('include_profile');
-	return View::make('random_user')->with('users', UserGenerator::get_users($num_users))
+	return View::make('random_user')->with('num_users', $num_users)
+									->with('users', UserGenerator::get_users($num_users))
 									->with('include_birthday', $include_birthday)
 									->with('include_location', $include_location)
 									->with('include_profile', $include_profile)
