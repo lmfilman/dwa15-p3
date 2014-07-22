@@ -42,7 +42,7 @@ class UserGenerator  {
 			$user->set_location($country_city_array[1] . ", " . $country_city_array[0]);
 
 			//Set the user's profile
-			$user->set_profile(LoremIpsumGenerator::get_text(1));
+			$user->set_profile(LoremIpsumGenerator::get_text(1, false));
 
 			array_push($users, $user);
 		}

@@ -4,10 +4,10 @@
 
 class LoremIpsumGenerator  {
 
-	public static function get_text ($num_paragraphs){
+	public static function get_text ($num_paragraphs, $start_with_lorem_ipsum){
 
 		//Read in Latin words
-		$lorem_ipsem_words = self::import_data(app_path().'/models/lorem_ipsum.txt');
+		$lorem_ipsum_words = self::import_data(app_path().'/models/lorem_ipsum.txt');
 
 		$text = "";
 
@@ -25,18 +25,24 @@ class LoremIpsumGenerator  {
 				$num_words_per_sentence = rand(8, 20);
 				for ($k = 0; $k < $num_words_per_sentence; $k++){
 
-					//Get random word from list of Latin words
-					$rand_word_index = rand(0, count($lorem_ipsem_words) - 1);
-					$word = $lorem_ipsem_words[$rand_word_index];
-					
-					//Capitalize first word in sentence
-					if ($k == 0){
-						$word = ucfirst($word);
+					if ($start_with_lorem_ipsum && $i == 0 && $j == 0 && $k == 0){
+						
+						//Start with lorem ipsum
+						$sentence = $sentence . "Lorem ipsum"; 
+
+					} else {
+						//Get random word from list of Latin words
+						$rand_word_index = rand(0, count($lorem_ipsum_words) - 1);
+						$word = $lorem_ipsum_words[$rand_word_index];
+						
+						//Capitalize first word in sentence
+						if ($k == 0){
+							$word = ucfirst($word);
+						}
+
+						//Append word to sentence block
+						$sentence = $sentence . ($k == 0 ? "" : " ") . $word; 
 					}
-
-					//Append word to sentence block
-					$sentence = $sentence . ($k == 0 ? "" : " ") . $word; 
-
 				}
 
 				//Append sentence to paragraph block
