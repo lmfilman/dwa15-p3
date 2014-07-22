@@ -32,15 +32,17 @@ Route::get('/', function()
 |
 */
 define("NUM_PARAGRAPHS_DEFAULT", 3);
-define("START_WITH_LOREM_IPSUM", true);
+define("PARAGRAPH_SIZE_DEFAULT", "mixed");
 
 Route::get('/lorem-ipsum', function()
 {
 	$num_paragraphs = NUM_PARAGRAPHS_DEFAULT;
+	$start_with_lorem_ipsum = true;
 	
 	return View::make('lorem_ipsum')->with('num_paragraphs', $num_paragraphs)
-									->with('lorem_ipsum_text', LoremIpsumGenerator::get_text($num_paragraphs, START_WITH_LOREM_IPSUM))
-									->with('start_with_lorem_ipsum', START_WITH_LOREM_IPSUM)
+									->with('lorem_ipsum_text', LoremIpsumGenerator::get_text($num_paragraphs, $start_with_lorem_ipsum, PARAGRAPH_SIZE_DEFAULT))
+									->with('start_with_lorem_ipsum', $start_with_lorem_ipsum)
+									->with('paragraph_size', PARAGRAPH_SIZE_DEFAULT)
 									->with('num_paragraphs_error', false);
 
 });
@@ -50,6 +52,7 @@ Route::post('/lorem-ipsum', function()
 	$num_paragraphs = Input::get('num_paragraphs');
 	$num_paragraphs_error = false;
 	$start_with_lorem_ipsum = Input::get('start_with_lorem_ipsum');
+	$paragraph_size = Input::get('paragraph_size');
 
 	// Validate user input
 	if ((!is_numeric($num_paragraphs) || $num_paragraphs > 20 || $num_paragraphs < 1)){
@@ -60,8 +63,9 @@ Route::post('/lorem-ipsum', function()
 		$num_paragraphs = NUM_PARAGRAPHS_DEFAULT;
 	} 
 	return View::make('lorem_ipsum')->with('num_paragraphs', $num_paragraphs)
-									->with('lorem_ipsum_text', LoremIpsumGenerator::get_text($num_paragraphs, $start_with_lorem_ipsum))
+									->with('lorem_ipsum_text', LoremIpsumGenerator::get_text($num_paragraphs, $start_with_lorem_ipsum, $paragraph_size))
 									->with('start_with_lorem_ipsum', $start_with_lorem_ipsum)
+									->with('paragraph_size', $paragraph_size)
 									->with('num_paragraphs_error', $num_paragraphs_error);
 
 });

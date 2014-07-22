@@ -4,7 +4,7 @@
 
 class LoremIpsumGenerator  {
 
-	public static function get_text ($num_paragraphs, $start_with_lorem_ipsum){
+	public static function get_text ($num_paragraphs, $start_with_lorem_ipsum, $paragraph_size){
 
 		//Read in Latin words
 		$lorem_ipsum_words = self::import_data(app_path().'/models/lorem_ipsum.txt');
@@ -16,8 +16,8 @@ class LoremIpsumGenerator  {
 
 			$paragraph = "<p>";
 
-			//Create sentences
-			$num_sentences_per_paragraph = rand(3, 10);
+			$num_sentences_per_paragraph = self::get_num_sentences($paragraph_size);
+
 			for ($j = 0; $j < $num_sentences_per_paragraph; $j++){
 
 				$sentence = "";
@@ -26,7 +26,7 @@ class LoremIpsumGenerator  {
 				for ($k = 0; $k < $num_words_per_sentence; $k++){
 
 					if ($start_with_lorem_ipsum && $i == 0 && $j == 0 && $k == 0){
-						
+
 						//Start with lorem ipsum
 						$sentence = $sentence . "Lorem ipsum"; 
 
@@ -85,6 +85,25 @@ class LoremIpsumGenerator  {
 		}
 
 		return $validated_data;
+	}
+
+	private static function get_num_sentences($paragraph_size){
+		//Create sentences
+		$min_num_sentences = 3;
+		$max_num_sentences = 14;
+
+		if ($paragraph_size == "small"){
+			$max_num_sentences = 5;
+		} 
+		elseif ($paragraph_size == "medium"){
+			$min_num_sentences = 6;
+			$max_num_sentences = 10;
+		} 
+		elseif ($paragraph_size == "large"){
+			$min_num_sentences = 10;
+		}
+
+		return rand($min_num_sentences, $max_num_sentences);			
 	}
 
 }
