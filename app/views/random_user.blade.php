@@ -1,14 +1,14 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>HOMEPAGE</title>
-</head>
-<body>
-	<div>
-		<a href='/'>Return home</a>
-		<h1>Random User Generator</h1>
-		<form method="POST">
+@extends('_master')
+
+@section('title')
+  P3 - Random User Generator
+@stop
+
+@section('content')
+  <div class="container">
+      <div class="starter-template">
+        <h1>Random User Generator</h1>
+        <form method="POST">
 			Number of users (1 - 20): <input type="text" name="num_users" value = <?php echo '"' . $num_users . '"';?>>
 			Include birthday? <input type="checkbox" name="include_birthday" <?php if ($include_birthday) {echo "checked";} ?>>
 			Include location? <input type="checkbox" name="include_location" <?php if ($include_location) {echo "checked";} ?>>
@@ -33,7 +33,6 @@
 				}
 			}
 		?>
-
-	</div>
-</body>
-</html>
+      </div>
+    </div>
+@stop

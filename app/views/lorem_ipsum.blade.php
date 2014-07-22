@@ -1,14 +1,14 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>HOMEPAGE</title>
-</head>
-<body>
-	<div>
-		<a href='/'>Return home</a>
-		<h1>Lorem Ipsum</h1>
-		<form method="POST" id="lorem_ipsum_form">
+@extends('_master')
+
+@section('title')
+  P3 - Lorem Ipsum Generator
+@stop
+
+@section('content')
+  <div class="container">
+      <div class="starter-template">
+        <h1>Lorem Ipsum Generator</h1>
+        <form method="POST" id="lorem_ipsum_form">
 			Number of paragraphs (1 - 20): <input type="text" name="num_paragraphs" value=<?php echo "'" . $num_paragraphs . "'";?>>
 			Size of paragraphs: 
 			<select name="paragraph_size" form="lorem_ipsum_form">
@@ -27,6 +27,6 @@
 			}
 
 			echo $lorem_ipsum_text; ?>
-	</div>
-</body>
-</html>
+      </div>
+    </div>
+@stop
