@@ -1,4 +1,3 @@
-http://en.wikipedia.org/wiki/List_of_national_capitals_and_largest_cities_by_country
 Afghanistan,Kabul
 Albania,Tirana
 Algeria,Algiers
