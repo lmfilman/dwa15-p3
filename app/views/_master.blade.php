@@ -20,7 +20,7 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="/lorem-ipsum">Lorem Ipsum Generator</a></li>
             <li><a href="/random-user">Random User</a></li>
           </ul>
