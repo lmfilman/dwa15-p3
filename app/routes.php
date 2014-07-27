@@ -84,7 +84,7 @@ Route::get('/random-user', function()
 									->with('users', UserGenerator::get_users(NUM_USERS_DEFAULT))
 									->with('include_birthday', false)
 									->with('include_location', false)
-									->with('include_profile', false)
+									->with('include_profile', true)
 									->with('num_users_error', false);
 });
 
