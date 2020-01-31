@@ -1,6 +1,5 @@
 # README for Project 3: Developer's Best Friend
-## Live URL of the project:
-http://lmfilman-dwa15-p3.gopagoda.com
+
 ## Description:
 A simple Laravel web application which contains 2 tools that a developer would find handy: 1) a Lorem Ipsum Generator and 2) a User Generator.  This application demonstrates knowledge of Laravel setup, installing Composer packages, routing, Object-Oriented PHP, & basic Blade Templating.
 ## Extra details:
